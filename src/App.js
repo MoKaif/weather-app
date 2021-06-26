@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Comp from './component/Comp';
+
 const api = {
   key: "4c8170b8bb33c8c8df8f388ef377d20b",
   base: "https://api.openweathermap.org/data/2.5/",
@@ -91,7 +93,7 @@ function App() {
           ""
         )}
       </main>
-      <div>Hi</div>
+      <Comp />
     </div>
   );
 }
