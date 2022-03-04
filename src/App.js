@@ -1,12 +1,16 @@
+import { useEffect } from 'react'
 import React, { useState } from "react";
-import Comp from './component/Comp';
 
 const api = {
   key: "4c8170b8bb33c8c8df8f388ef377d20b",
   base: "https://api.openweathermap.org/data/2.5/",
-}
+};
 
 function App() {
+  useEffect(() => {
+    document.title = "Weather App | Kaif";
+  }, []);
+
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
@@ -70,14 +74,14 @@ function App() {
           <input
             type="text"
             className="search-bar"
-            placeholder="Search..."
+            placeholder="Search for a city"
             onChange={(e) => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
           />
         </div>
         {typeof weather.main != "undefined" ? (
-          <div>
+          <div className='box_we'>
             <div className="location-box">
               <div className="location">
                 {weather.name}, {weather.sys.country}
@@ -93,7 +97,6 @@ function App() {
           ""
         )}
       </main>
-      <Comp />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-<title>Weather App</title>
+import { Helmet } from 'react-helmet';
 ReactDOM.render(
   <React.StrictMode>
     <App />
